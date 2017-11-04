@@ -12,21 +12,16 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " plugins
-Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-fugitive'
-Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-surround'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'tpope/vim-repeat'
-Plugin 'mattn/emmet-vim'
 Plugin 'raimondi/delimitmate'
 Plugin 'tpope/vim-markdown'
 Plugin 'flazz/vim-colorschemes'
-Plugin 'nvie/vim-flake8'
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'othree/javascript-libraries-syntax.vim'
@@ -38,18 +33,36 @@ Plugin 'VundleVim/Vundle.vim'
 call vundle#end()
 filetype plugin indent on
 
-set term=screen-256color
 colorscheme PaperColor
 
+let mapleader = "\<Space>"
 
-let python_highlight_all=1
-
+syntax on
+set nu
 set autoindent
+set nowrap
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set smarttab
+set expandtab
+set smartindent
+set incsearch
+set ignorecase
+set smartcase
+set cursorline
+set showmatch
+set incsearch
+set hlsearch
+set wildmenu
+set ruler
+set guioptions=c
+
+set sidescroll=1
+set sidescrolloff=7
+
 set bg=dark
 set backspace=indent,eol,start
-set expandtab
-set ignorecase
-set incsearch
 set laststatus=2
 set linebreak
 set nobackup
@@ -57,34 +70,21 @@ set noerrorbells
 set nolist
 set noswapfile
 set novb
-set nowrap
-set number
-set relativenumber
-set ruler
-set scrolloff=8
-set showmatch
-set shiftwidth=4
 set shortmess=I
 set showcmd
 set showmode
-set sidescroll=1
-set sidescrolloff=7
-set smartcase
-set softtabstop=4
 set undolevels=1000
 
-highlight ColorColumn ctermbg=black
-set colorcolumn=80
-
-"CtrlP
-let g:ctrlp_map = '<c-p>'
+" Global
+nnoremap <leader><space> :nohlsearch<CR>
+nnoremap <leader>ev :vsp $MYVIMRC<CR>
+nnoremap <leader>sv :source $MYVIMRC<CR>
+nnoremap <leader>u :UndotreeToggle<CR>
+let g:loaded_logipat = 1
 
 "Airline
 let g:airline_theme='tomorrow'
 let g:airline_powerline_fonts = 1
-
-"NERDTree
-map <C-n> :NERDTreeToggle<CR>
 
 "Gvim mods
 set encoding=utf-8
@@ -123,9 +123,26 @@ nnoremap <C-l> <C-w>l
 " Remove all trailing whitespace by pressing F4
 noremap <F4> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 
+" Go to tab by number
+noremap <leader>1 1gt
+noremap <leader>2 2gt
+noremap <leader>3 3gt
+noremap <leader>4 4gt
+noremap <leader>5 5gt
+noremap <leader>6 6gt
+noremap <leader>7 7gt
+noremap <leader>8 8gt
+noremap <leader>9 9gt
+noremap <leader>0 :tablast<cr>
 if has("gui_running")
-    if has("gui_gtk2")
-        set guifont=Inconsolata\ for\ Powerline\ Medium\ 16
-        colorscheme iceberg
-    endif
+  if has("gui_gtk2")
+    set guifont=Inconsolata\ 12
+  elseif has("gui_macvim")
+    set guifont=Inconsolata:h14
+  elseif has("gui_win32")
+    set guifont=Consolas:h11:cANSI
+  endif
 endif
+
+set exrc
+set secure
