@@ -1,16 +1,20 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-# Set your current project here, which should be located in ~/projects/
-export CURRENT_PROJECT="blog"
-
 # Path to your oh-my-zsh installation.
-export ZSH=/home/wes/.oh-my-zsh
+  export ZSH=/home/anoop/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="robbyrussell"
+
+# Set list of themes to load
+# Setting this variable when ZSH_THEME=random
+# cause zsh load theme from this variable instead of
+# looking in ~/.oh-my-zsh/themes/
+# An empty array have no effect
+# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -45,7 +49,7 @@ ZSH_THEME="robbyrussell"
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
 # The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
- HIST_STAMPS="mm/dd/yyyy"
+ HIST_STAMPS="dd/mm/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
@@ -54,7 +58,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(zsh-256color, git, autopep8, celery, colorize, debian, ng, django, github, heroku, jsontools, postgres, shrink-path, tmux, ubuntu)
+plugins=(zsh-256color, git, colorize, ng, tmux, ubuntu)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -94,40 +98,8 @@ alias ...="cd ../.."
 alias l='ls -la'
 alias sz='source ~/.zshrc'
 
-# projects
-alias project="cd ~/projects/$CURRENT_PROJECT"
-alias gov="cd $VIRTUAL_ENV/bin"
-alias journal="cd ~/projects/goals"
-
-# git stuff
-alias startover='git status | grep "modified" | awk "{print \$2}" | xargs -I{} git checkout -- {}'
-
 # tmux stuff
 alias tmux="TERM=screen-256color-bce tmux"
 alias tm="tmux new-session"
 alias tl="tmux list-sessions"
 alias ta="tmux attach -t"
-
-# django stuff
-alias rabbit="invoke-rc.d rabbitmq-server"
-alias dtest="project && python manage.py test"
-alias celeryworker="celery -A $CURRENT_PROJECT worker -l info"
-alias runserver="cd ~/projects/$CURRENT_PROJECT && python manage.py runserver"
-alias collect="cd ~/projects/$CURRENT_PROJECT && python manage.py collectstatic"
-
-# edit dotfiles
-alias dotfiles="cd ~/dotfiles && git status"
-alias editzshrc="vim ~/dotfiles/.zshrc"
-alias editvimrc="vim ~/dotfiles/.vimrc"
-alias edittmux="vim ~/dotfiles/tmux.config"
-
-# heroku stuff
-alias hl="heroku login"
-
-# vps stuff
-alias finnegan="ssh root@$FINNEGAN_VPS"
-
-source virtualenvwrapper.sh
-export PROJECT_HOME=/home/wes/projects
-export GOPATH=$HOME/Go
-export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
