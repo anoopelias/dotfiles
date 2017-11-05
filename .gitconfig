@@ -17,6 +17,7 @@
     pm= "!git push -u origin master"
     c = commit -m
     a = add
+    s = status
     cob = checkout -b
 
 [push]
