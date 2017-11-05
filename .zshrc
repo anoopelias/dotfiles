@@ -103,3 +103,5 @@ alias tmux="TERM=screen-256color-bce tmux"
 alias tm="tmux new-session"
 alias tl="tmux list-sessions"
 alias ta="tmux attach -t"
+
+eval "$(dircolors ~/.dircolors)"
