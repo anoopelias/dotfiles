@@ -106,3 +106,5 @@ alias tl="tmux list-sessions"
 alias ta="tmux attach -t"
 
 eval "$(dircolors ~/.dircolors)"
+
+export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
