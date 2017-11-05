@@ -58,7 +58,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(zsh-256color, git, colorize, ng, tmux, ubuntu)
+plugins=(zsh-256color, git, colorize, ng, tmux, ubuntu, vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -97,6 +97,7 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias l='ls -la'
 alias sz='source ~/.zshrc'
+alias ez='vim ~/.zshrc'
 
 # tmux stuff
 alias tmux="TERM=screen-256color-bce tmux"
