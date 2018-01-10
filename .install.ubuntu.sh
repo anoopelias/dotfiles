@@ -59,3 +59,6 @@ chsh -s $(which zsh)
 # See https://askubuntu.com/questions/141752/keyboard-shortcut-to-move-windows-between-monitors
 apt-get install compizconfig-settings-manager compiz-plugins-extra
 
+
+# For pbcopy / pbpaste
+sudo apt-get install xclip
