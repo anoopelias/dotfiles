@@ -2,6 +2,9 @@
     email = anoopelias@gmail.com
     name = anoopelias
 
+[core]
+editor = vim
+
 [color]
     diff = auto
     status = auto

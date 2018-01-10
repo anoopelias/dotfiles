@@ -15,6 +15,8 @@ call vundle#begin()
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-vinegar'
+Plugin 'tpope/vim-speeddating'
+Plugin 'jceb/vim-orgmode'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'vim-airline/vim-airline'
@@ -27,6 +29,7 @@ Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'pangloss/vim-javascript'
+Plugin 'vim-scripts/utl.vim'
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
@@ -144,6 +147,13 @@ if has("gui_running")
     set guifont=Consolas:h11:cANSI
   endif
 endif
+
+" Map F3 to insert time in orgmode format
+nmap <F3> i<C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR><Esc>
+imap <F3> <C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR>
+
+" Mark all org files
+let g:org_agenda_files=['~/org/']
 
 set exrc
 set secure
