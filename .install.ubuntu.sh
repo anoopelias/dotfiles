@@ -60,5 +60,12 @@ chsh -s $(which zsh)
 apt-get install compizconfig-settings-manager compiz-plugins-extra
 
 
-# For pbcopy / pbpaste
+# For pbcopy / pbpaste - Corresponding entries are there in .zshrc
 sudo apt-get install xclip
+
+# Install nvm
+# See link https://github.com/creationix/nvm
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash
+
+# Install yarn
+# https://yarnpkg.com/lang/en/docs/install/
