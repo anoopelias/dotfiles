@@ -69,3 +69,7 @@ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | b
 
 # Install yarn
 # https://yarnpkg.com/lang/en/docs/install/
+
+# Install emacs
+sudo apt-get install emacs
+
