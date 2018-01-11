@@ -36,7 +36,7 @@ sudo apt install checkinstall
 sudo checkinstall
 
 # Other packages
-sudo apt-get install curl git xsel tmux zsh make firefox chromium-browser fonts-inconsolata
+sudo apt-get install curl git xsel tmux zsh make firefox chromium-browser fonts-inconsolata p7zip-full
 
 sudo apt-get install keepass2
 
