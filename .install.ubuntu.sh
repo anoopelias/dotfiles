@@ -72,6 +72,10 @@ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | b
 
 # Install emacs
 sudo apt-get install emacs
+# Install emacs evil mode
+#  M-x package-refresh-contents
+#  M-x package-install RET evil
 
 # Change terminal font to 'Inconsolata Medium'
+
 
