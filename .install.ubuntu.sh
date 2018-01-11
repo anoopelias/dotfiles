@@ -73,3 +73,5 @@ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | b
 # Install emacs
 sudo apt-get install emacs
 
+# Change terminal font to 'Inconsolata Medium'
+
