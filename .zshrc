@@ -113,3 +113,5 @@ export NVM_DIR="$HOME/.nvm"
 
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
+
+export EDITOR=`which vim`
