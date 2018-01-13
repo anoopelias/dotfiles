@@ -40,8 +40,10 @@ sudo apt-get install curl git xsel tmux zsh make firefox chromium-browser fonts-
 
 sudo apt-get install keepass2
 
+# For exfat filesystem used in Mac
+sudo apt-get install exfat-fuse exfat-utils
+
 # For 17.04 only
-# sudo apt-get install exfat-fust exfat-utils
 # sudo apt-get install keepassxc
 
 sudo apt-get install fonts-inconsolata
