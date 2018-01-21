@@ -78,6 +78,8 @@ set shortmess=I
 set showcmd
 set showmode
 set undolevels=1000
+set foldmethod=syntax
+set foldlevelstart=20
 
 " Global
 nnoremap <leader><space> :nohlsearch<CR>
