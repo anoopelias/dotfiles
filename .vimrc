@@ -170,5 +170,9 @@ autocmd FileType jsx vnoremap <buffer> <c-f> :call RangeJsxBeautify()<cr>
 autocmd FileType html vnoremap <buffer> <c-f> :call RangeHtmlBeautify()<cr>
 autocmd FileType css vnoremap <buffer> <c-f> :call RangeCSSBeautify()<cr>
 
+" For find selection in visual mode
+vnoremap // y/<C-R>"<CR>
+vnoremap ?? y?<C-R>"<CR>
+
 set exrc
 set secure
