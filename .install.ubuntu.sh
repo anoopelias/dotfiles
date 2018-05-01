@@ -35,6 +35,9 @@ make VIMRUNTIMEDIR=/usr/local/share/vim/vim80
 sudo apt install checkinstall
 sudo checkinstall
 
+# https://askubuntu.com/questions/746931/disabling-package-updates-for-custom-built-vim
+sudo apt-mark hold vim
+
 # Other packages
 sudo apt-get install curl git xsel tmux zsh make firefox chromium-browser fonts-inconsolata p7zip-full
 
@@ -47,6 +50,9 @@ sudo apt-get install exfat-fuse exfat-utils
 # sudo apt-get install keepassxc
 
 sudo apt-get install fonts-inconsolata
+
+# For markdown preview
+sudo apt-get install grip xdotool
 
 # Install Vundle
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim

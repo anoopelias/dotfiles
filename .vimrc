@@ -22,8 +22,6 @@ Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'raimondi/delimitmate'
-Plugin 'tpope/vim-markdown'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'leafgarland/typescript-vim'
@@ -31,6 +29,7 @@ Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'vim-scripts/utl.vim'
 Plugin 'maksimr/vim-jsbeautify'
+Plugin 'JamshedVesuna/vim-markdown-preview'
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
@@ -46,9 +45,9 @@ syntax on
 set nu
 set autoindent
 set nowrap
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
 set smarttab
 set expandtab
 set smartindent
@@ -173,6 +172,10 @@ autocmd FileType css vnoremap <buffer> <c-f> :call RangeCSSBeautify()<cr>
 " For find selection in visual mode
 vnoremap // y/<C-R>"<CR>
 vnoremap ?? y?<C-R>"<CR>
+
+" Markdown preview options
+let vim_markdown_preview_hotkey='<C-m>'
+let vim_markdown_preview_github=1
 
 set exrc
 set secure
