@@ -112,3 +112,27 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+alias cd..="cd .."
+alias ..="cd .."
+alias ...="cd ../.."
+alias l='ls -la'
+alias sz='source ~/.zshrc'
+alias ez='vim ~/.zshrc'
+
+# tmux stuff
+alias tmux="TERM=screen-256color-bce tmux"
+alias tm="tmux new-session"
+alias tl="tmux list-sessions"
+alias ta="tmux attach -t"
+
+eval "$(dircolors ~/.dircolors)"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+alias pbcopy='xclip -selection clipboard'
+alias pbpaste='xclip -selection clipboard -o'
+
+export EDITOR=`which vim`
