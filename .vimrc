@@ -1,45 +1,46 @@
 " Anoop Elias vimrc
-" Last Update Feb 8 2017
 
 set nocompatible
 
-syntax on
+" Install vim-plug if it is not there already
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 
-" Vundle begins here; turn off filetype temporarily
-" set the runtime path to include Vundle and initialize
-filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin('~/.vim/plugged')
 
 " plugins
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-vinegar'
-Plugin 'tpope/vim-speeddating'
-Plugin 'jceb/vim-orgmode'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'flazz/vim-colorschemes'
-Plugin 'bronson/vim-trailing-whitespace'
-Plugin 'leafgarland/typescript-vim'
-Plugin 'othree/javascript-libraries-syntax.vim'
-Plugin 'pangloss/vim-javascript'
-Plugin 'vim-scripts/utl.vim'
-Plugin 'maksimr/vim-jsbeautify'
-Plugin 'JamshedVesuna/vim-markdown-preview'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-vinegar'
+Plug 'tpope/vim-speeddating'
+Plug 'tpope/vim-unimpaired'
+Plug 'jceb/vim-orgmode'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'scrooloose/nerdcommenter'
+Plug 'flazz/vim-colorschemes'
+Plug 'bronson/vim-trailing-whitespace'
+Plug 'leafgarland/typescript-vim'
+Plug 'othree/javascript-libraries-syntax.vim'
+Plug 'pangloss/vim-javascript'
+Plug 'vim-scripts/utl.vim'
+Plug 'fatih/vim-go'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
+Plug 'jremmen/vim-ripgrep'
+Plug 'AndrewRadev/linediff.vim'
 
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
+call plug#end()
 
-call vundle#end()
+syntax on
 filetype plugin indent on
-
 colorscheme PaperColor
-
 let mapleader = "\<Space>"
+let maplocalleader="\<space>"
 
 syntax on
 set nu
@@ -80,6 +81,7 @@ set showmode
 set undolevels=1000
 set foldmethod=syntax
 set foldlevelstart=20
+set nofixendofline
 
 " Global
 nnoremap <leader><space> :nohlsearch<CR>
@@ -102,24 +104,6 @@ set guioptions-=m
 set guioptions-=T
 set guioptions-=r
 set guioptions-=Lo
-
-"nerd-commenter settings
-" Add spaces after comment delimiters by default
-let g:NERDSpaceDelims = 1
-
-" Use compact syntax for prettified multi-line comments
-let g:NERDCompactSexyComs = 1
-
-" Align line-wise comment delimiters flush left instead of following code
-" indentation
-let g:NERDDefaultAlign = 'left'
-
-" Allow commenting and inverting empty lines (useful when commenting a
-" region)
-let g:NERDCommentEmptyLines = 1
-
-" Enable trimming of trailing whitespace when uncommenting
-let g:NERDTrimTrailingWhitespace = 1
 
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
@@ -157,25 +141,22 @@ imap <F3> <C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR>
 " Mark all org files
 let g:org_agenda_files=['~/org/']
 
-" For JsBeautify
-autocmd FileType javascript noremap <buffer>  <c-f> :call JsBeautify()<cr>
-autocmd FileType json noremap <buffer> <c-f> :call JsonBeautify()<cr>
-autocmd FileType jsx noremap <buffer> <c-f> :call JsxBeautify()<cr>
-autocmd FileType html noremap <buffer> <c-f> :call HtmlBeautify()<cr>
-autocmd FileType css noremap <buffer> <c-f> :call CSSBeautify()<cr>
-autocmd FileType javascript vnoremap <buffer>  <c-f> :call RangeJsBeautify()<cr>
-autocmd FileType json vnoremap <buffer> <c-f> :call RangeJsonBeautify()<cr>
-autocmd FileType jsx vnoremap <buffer> <c-f> :call RangeJsxBeautify()<cr>
-autocmd FileType html vnoremap <buffer> <c-f> :call RangeHtmlBeautify()<cr>
-autocmd FileType css vnoremap <buffer> <c-f> :call RangeCSSBeautify()<cr>
-
 " For find selection in visual mode
 vnoremap // y/<C-R>"<CR>
 vnoremap ?? y?<C-R>"<CR>
 
-" Markdown preview options
-let vim_markdown_preview_hotkey='<C-m>'
-let vim_markdown_preview_github=1
+let g:go_fmt_command = "goimports"
 
+" Markdown
+nmap <C-m> <Plug>MarkdownPreview
+
+noremap <Leader>y "*y
+noremap <Leader>p "*p
+noremap <Leader>Y "+y
+noremap <Leader>P "+p
+
+" For quickfix to open in the last window
+set switchbuf+=uselast
 set exrc
 set secure
+
