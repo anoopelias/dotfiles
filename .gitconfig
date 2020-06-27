@@ -30,6 +30,7 @@
 	st = status
 	b = branch
   a = add
+  p = push
 
 [core]
   pager = less -FRX
