@@ -1,29 +1,36 @@
+# This is Git's per-user configuration file.
 [user]
-    email = anoopelias@gmail.com
-    name = anoopelias
+	name = Anoop Elias
+	email = anoopelias@gmail.com
+[includeIf "gitdir:~/wspace/go-jek/"] # job needs, like workspace/* so all included projects
+	path = .gitconfig-go-jek
+[includeIf "gitdir:~/wspace/tw/"] # job needs, like workspace/* so all included projects
+	path = .gitconfig-tw
+[core]
+	excludesfile = /Users/anoopelias/.gitignore_global
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+[url "git@source.golabs.io:"]
+	insteadOf = https://source.golabs.io/
+[alias]
+	co = checkout
+  cob = checkout -b
+  c = commit -m
+  ci = commit
+  s = status
+	st = status
+	b = branch
+  a = add
+  pm= "!git push -u origin master"
 
 [core]
-editor = vim
-
-[color]
-    diff = auto
-    status = auto
-    ui = auto
-
-[color "diff"]
-    meta = yellow bold
-    frag = magenta bold # line info
-    old = red # deletions
-    new = green # additions
-
-[alias]
-    pm= "!git push -u origin master"
-    c = commit -m
-    a = add
-    s = status
-    cob = checkout -b
-
-[push]
-    default = simple
-[pager]
-	log = false
+  pager = less -FRX
