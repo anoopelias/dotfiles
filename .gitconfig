@@ -30,7 +30,6 @@
 	st = status
 	b = branch
   a = add
-  pm= "!git push -u origin master"
 
 [core]
   pager = less -FRX
