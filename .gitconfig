@@ -1,0 +1,17 @@
+[user]
+	email = anoopelias@gmail.com
+	name = Anoop Elias
+    [includeIf "gitdir:~/wspace/bp/"] # job needs, like workspace/* so all included projects
+	path = .gitconfig-bp
+    [includeIf "gitdir:~/wspace/tw/"] # job needs, like workspace/* so all included projects
+	path = .gitconfig-tw
+[alias]
+	co = checkout
+    cob = checkout -b
+    c = commit -m
+    ci = commit
+    s = status
+	st = status
+	b = branch
+    a = add
+    p = push
