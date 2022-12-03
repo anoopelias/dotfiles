@@ -33,6 +33,7 @@ Plug 'fatih/vim-go'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 Plug 'jremmen/vim-ripgrep'
 Plug 'AndrewRadev/linediff.vim'
+Plug 'junegunn/goyo.vim'
 
 call plug#end()
 
@@ -46,9 +47,9 @@ syntax on
 set nu
 set autoindent
 set nowrap
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
 set smarttab
 set expandtab
 set smartindent
@@ -155,8 +156,10 @@ noremap <Leader>p "*p
 noremap <Leader>Y "+y
 noremap <Leader>P "+p
 
+let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+
 " For quickfix to open in the last window
-set switchbuf+=uselast
+" set switchbuf+=uselast
 set exrc
 set secure
 

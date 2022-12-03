@@ -1,6 +1,0 @@
-sandbox_init_asdf() {
-  . $(brew --prefix asdf)/asdf.sh
-}
-
-sandbox_hook asdf node
-sandbox_hook asdf nodemon
