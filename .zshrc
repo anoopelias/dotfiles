@@ -107,7 +107,11 @@ source $ZSH/oh-my-zsh.sh
 set -o vi
 alias ll='ls -al'
 bindkey '^R' history-incremental-search-backward
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$HOME/go/bin:$PATH
 export PATH=/opt/homebrew/bin:$PATH
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
+export PATH=/Users/anoopelias/.rbenv/versions/3.1.3/bin/:$PATH
+export PATH="/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/3.1.3/bin:$PATH"
+
+source /Users/anoopelias/.docker/init-zsh.sh || true # Added by Docker Desktop
