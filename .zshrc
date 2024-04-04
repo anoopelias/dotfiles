@@ -106,12 +106,29 @@ source $ZSH/oh-my-zsh.sh
 # Custom added by Anoop
 set -o vi
 alias ll='ls -al'
+alias python='python3'
+alias pip='pip3'
 bindkey '^R' history-incremental-search-backward
 export PATH=$HOME/bin:/usr/local/bin:$HOME/go/bin:$PATH
 export PATH=/opt/homebrew/bin:$PATH
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
-export PATH=/Users/anoopelias/.rbenv/versions/3.1.3/bin/:$PATH
-export PATH="/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/3.1.3/bin:$PATH"
+
+export PYTHON_HOME="$HOME/Library/Python/3.9"
+export PATH="$PYTHON_HOME/bin:$PATH"
+
+export BUILD_BUILDID="123"
+export CLIENT_SECRET="shh....!"
 
 source /Users/anoopelias/.docker/init-zsh.sh || true # Added by Docker Desktop
+
+export WASMTIME_HOME="$HOME/.wasmtime"
+
+export PATH="$WASMTIME_HOME/bin:$PATH"
+export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
+export WAMR_PATH=~/wspace/wasm-micro-runtime
+export WASI_SDK_PATH=~/wspace/wasi-sdk/build/install/opt/wasi-sdk
+export WASI_LIBC_PATH=~/wspace/wasi-libc
+
+export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
