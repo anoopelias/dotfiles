@@ -21,9 +21,12 @@ editor = vim
     c = commit -m
     a = add
     s = status
+    co= checkout
     cob = checkout -b
 
 [push]
     default = simple
 [pager]
 	log = false
+[init]
+	defaultBranch = main
