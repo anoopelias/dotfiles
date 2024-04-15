@@ -37,7 +37,7 @@ fi
 
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
-    xterm-color) color_prompt=yes;;
+    xterm-color|*-256color) color_prompt=yes;;
 esac
 
 # uncomment for a colored prompt, if the terminal has the capability; turned
@@ -84,6 +84,9 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
+# colored GCC warnings and errors
+#export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+
 # some more ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
@@ -113,29 +116,16 @@ if ! shopt -oq posix; then
   fi
 fi
 
-alias cd..="cd .."
-alias ..="cd .."
-alias ...="cd ../.."
-alias l='ls -la'
-alias sz='source ~/.zshrc'
-alias ez='vim ~/.zshrc'
-
-# tmux stuff
-alias tmux="TERM=screen-256color-bce tmux"
-alias tm="tmux new-session"
-alias tl="tmux list-sessions"
-alias ta="tmux attach -t"
-
-eval "$(dircolors ~/.dircolors)"
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
+# Anoop's entries
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
-
-export EDITOR=`which vim`
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
 
 # Set to vi mode
 set -o vi
+
+# Source ros
+source /opt/ros/humble/setup.bash
+source /home/anoop/ros2_ws/install/setup.bash
+source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash
