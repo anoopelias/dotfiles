@@ -30,11 +30,12 @@ Plug 'othree/javascript-libraries-syntax.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'vim-scripts/utl.vim'
 Plug 'fatih/vim-go'
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 Plug 'jremmen/vim-ripgrep'
 Plug 'AndrewRadev/linediff.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'NLKNguyen/papercolor-theme'
+Plug 'duane9/nvim-rg'
 
 call plug#end()
 
@@ -48,9 +49,9 @@ syntax on
 set nu
 set autoindent
 set nowrap
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
 set smarttab
 set expandtab
 set smartindent

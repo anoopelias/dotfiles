@@ -1,5 +1,5 @@
 [user]
-    email = anoopelias@gmail.com
+    email = aelias@niqorobotics.com
     name = anoopelias
 
 [core]
@@ -23,6 +23,7 @@ editor = vim
     s = status
     co= checkout
     cob = checkout -b
+    l = log --oneline --graph --decorate
 
 [push]
     default = simple

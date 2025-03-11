@@ -129,3 +129,35 @@ set -o vi
 source /opt/ros/humble/setup.bash
 source /home/anoop/ros2_ws/install/setup.bash
 source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash
+
+# Qt
+# export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/Qt-6.5.3/lib
+export PATH=$PATH:/opt/Qt-6.5.3/bin
+
+# Show git branch name
+export GIT_PS1_SHOWDIRTYSTATE=true
+export GIT_PS1_SHOWUNTRACKEDFILES=true
+
+export PS1='\[\033[32m\]\u@\h\[\033[00m\]:\[\033[34m\]\w\[\033[31m\]$(__git_ps1)\[\033[00m\]\$ '
+
+## Niqo view app build
+# source ~/wspace/nq/ts_msgs/install/setup.sh
+
+## Geographic lib
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/libgeographic/lib
+export PATH=$PATH:/opt/libgeographic/bin
+
+## For Jupyter lab
+export PATH=$PATH:/home/anoop/.local/bin
+
+## Conda Miniforge
+export PATH=$PATH:/home/anoop/mambaforge/bin
+# source /home/$USER/TechnicianApp/ts_msgs/install/setup.bash
+
+## Git aliases
+alias gl='git log --oneline'
+
+# For compiling Jetson
+export CROSS_COMPILE=/home/anoop/wspace/nq/orin-nx/aarch64--glibc--stable-2022.08-1/bin/aarch64-buildroot-linux-gnu-
+export INSTALL_MOD_PATH=/home/anoop/wspace/nq/orin-nx/Jetson_Linux_R36.4.3_aarch64/Linux_for_Tegra/rootfs/
+export KERNEL_HEADERS=/home/anoop/wspace/nq/orin-nx/Jetson_Linux_R36.4.3_aarch64/Linux_for_Tegra/source/kernel/kernel-jammy-src
